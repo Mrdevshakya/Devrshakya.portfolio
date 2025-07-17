@@ -44,12 +44,16 @@
   .btn-primary {
     @apply relative px-8 py-3 text-secondary font-medium
            overflow-hidden rounded-lg transition-all duration-300
-           hover:text-white hover:shadow-neon
+           hover:text-white
            before:absolute before:inset-0 
            before:bg-secondary before:scale-x-0 
            before:origin-right before:transition-transform 
            before:duration-300 hover:before:scale-x-100 
            hover:before:origin-left;
+  }
+
+  .btn-primary:hover {
+    @apply shadow-neon;
   }
 
   .btn-primary span {
@@ -62,13 +66,30 @@
 
   .project-card {
     @apply glass-panel p-6 transition-all duration-500
-           hover:-translate-y-2 hover:shadow-neon;
+           hover:-translate-y-2;
+  }
+
+  .project-card:hover {
+    @apply shadow-neon;
+  }
+
+  .project-card img {
+    @apply transition-transform duration-300 filter brightness-100;
+    max-height: 200px;
+    width: auto;
+  }
+
+  .project-card:hover img {
+    @apply scale-105;
   }
 
   .skill-badge {
     @apply glass-panel p-4 text-center font-medium
-           transition-all duration-300 hover:text-secondary
-           hover:shadow-neon;
+           transition-all duration-300 hover:text-secondary;
+  }
+
+  .skill-badge:hover {
+    @apply shadow-neon;
   }
 
   .skill-badge .icon {
@@ -82,13 +103,21 @@
   .contact-input {
     @apply w-full glass-panel p-3 
            focus:border-secondary focus:outline-none 
-           transition-all duration-300 focus:shadow-neon;
+           transition-all duration-300;
+  }
+
+  .contact-input:focus {
+    @apply shadow-neon;
   }
 
   .input {
     @apply bg-primary/30 border border-white/10 rounded-lg px-4 py-2
            focus:border-secondary focus:outline-none 
-           transition-all duration-300 focus:shadow-neon;
+           transition-all duration-300;
+  }
+
+  .input:focus {
+    @apply shadow-neon;
   }
 }
 

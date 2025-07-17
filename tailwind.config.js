@@ -61,11 +61,19 @@ export default {
         'glass-gradient': 'linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02))',
         'grid-pattern': 'radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px)',
       },
-      boxShadow: {
-        'neon': '0 0 5px theme(colors.secondary.DEFAULT), 0 0 20px theme(colors.secondary.DEFAULT)',
-        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
-      },
     },
   },
-  plugins: [],
+  plugins: [
+    function({ addUtilities, theme }) {
+      const newUtilities = {
+        '.shadow-neon': {
+          'box-shadow': `0 0 5px ${theme('colors.secondary')}, 0 0 20px ${theme('colors.secondary')}`
+        },
+        '.shadow-glass': {
+          'box-shadow': '0 8px 32px 0 rgba(31, 38, 135, 0.37)'
+        }
+      }
+      addUtilities(newUtilities, ['hover'])
+    }
+  ],
 }
